@@ -1,0 +1,112 @@
+<div class="flex flex-col items-center justify-center">
+  <img
+    src="https://cdn.icon-icons.com/icons2/2699/PNG/512/amazon_logo_icon_169612.png"
+    alt="Amazon Logo"
+    class="h-12"
+  />
+</div>
+<div class="flex flex-col items-center justify-center min-h-screen">
+  <div
+    class="flex flex-col items-center p-6 rounded-lg shadow-md w-full max-w-sm border border-black"
+  >
+    <h2 class="text-4xl font-bold mb-4">Crear cuenta</h2>
+    <form class="w-full">
+
+      <!-- Mensaje de validación-->
+      @if (message) {
+        <div class="alert-{{type}}" role="alert">
+          {{message}}
+        </div>
+      }
+      <!-- Mensaje de validación-->
+
+
+      <label for="nombre" class="block text-sm font-medium">Tu nombre</label>
+      <input
+        type="text"
+        id="nombre"
+        name="nombre"
+        class="mt-1 block w-full px-3 py-2 border border-zinc-300 rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"
+        [(ngModel)]="nombre"
+      />
+
+      <label for="email" class="block text-sm font-medium mt-2"
+        >Correo electrónico</label
+      >
+      <input
+        type="email"
+        id="email"
+        name="email"
+        class="mt-1 block w-full px-3 py-2 border border-zinc-300 rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"
+        [(ngModel)]="email"
+      />
+
+      <label for="password" class="block text-sm font-medium mt-2"
+        >Contraseña</label
+      >
+      <input
+        type="password"
+        id="password"
+        name="password"
+        class="mt-1 block w-full px-3 py-2 border border-zinc-300 rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"
+        [(ngModel)]="password"
+      />
+
+      <label for="passwordvalidar" class="block text-sm font-medium mt-2"
+        >Vuelve a escribir la contraseña</label
+      >
+      <input
+        type="password"
+        id="passwordvalidar"
+        name="passwordvalidar"
+        class="mt-1 block w-full px-3 py-2 border border-zinc-300 rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"
+        [(ngModel)]="passwordvalidar"
+      />
+
+      <button
+        type="submit"
+        class="mt-4 w-full bg-yellow-400 text-black py-2 rounded-md hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500"
+        (click)="register()"
+      >
+      @if (loadingregister) {
+        Continuar
+      }
+      @else {
+        Continuar
+      }
+        
+      </button>
+    </form>
+    <br />
+    <p class="mt-4 text-xs text-left">
+      Al crear una cuenta, aceptas las
+      <a href="#" class="text-blue-500 hover:underline">Condiciones de uso</a>
+      y el
+      <a href="#" class="text-blue-500 hover:underline"
+        >Aviso de privacidad</a
+      >de Amazon.com
+    </p>
+    <hr class="my-4 w-full border-zinc-300 dark:border-zinc-300" />
+    <p class="text-sm text-center">
+      ¿Compras para el trabajo?
+      <br />
+      <a href="#" class="text-blue-500 hover:underline"
+        >Crea una cuenta corporativa gratis</a
+      >
+    </p>
+    <hr class="my-4 w-full border-zinc-300 dark:border-zinc-300" />
+    <p class="text-sm text-center">
+        ¿Ya tienes una cuenta? <a routerLink="/iniciar" class="text-blue-500 hover:underline"
+          >Iniciar sesión</a
+        >
+      </p>
+  </div>
+  <div class="mt-6 text-xs text-blue-500">
+    <a href="#" class="hover:underline">Condiciones de uso</a> ·
+    <a href="#" class="hover:underline">Aviso de privacidad</a> ·
+    <a href="#" class="hover:underline">Ayuda</a>
+  </div>
+  <div class="mt-6 text-xs text-zinc-600 dark:text-zinc-400">
+    <span class="mt-2">&copy; 1996-2024 Amazon.com, Inc. o sus afiliados</span>
+  </div>
+</div>
