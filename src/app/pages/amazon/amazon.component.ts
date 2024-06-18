@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
-import { AuthenticateService } from '../../services/authenticate.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-amazon',
@@ -12,10 +10,5 @@ import { Router } from '@angular/router';
 })
 export class AmazonComponent {
 
-  constructor(private authService: AuthenticateService, private router: Router) {}
-
-  logout() {
-    this.authService.logout();
-    this.router.navigate(['/iniciar'])
-  }
+  constructor() {}
 }

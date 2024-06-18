@@ -29,7 +29,7 @@ export class IniciarSesionComponent {
       this.authService.login(this.email, this.password)
         .then(() => {
           this.loadinglogin = false;
-          this.router.navigate(['/amazon']);
+          this.router.navigate(['/show-amazon']);
         })
         .catch((error) => {
           if (error.message === 'auth/email-not-verified') {
