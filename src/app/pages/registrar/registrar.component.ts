@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
 import { AuthenticateService } from '../../services/authenticate.service';
+import { ReactiveFormsModule } from '@angular/forms';
+import { GuardarService } from '../../services/guardar.service';
 
 @Component({
   selector: 'app-registrar',
   standalone: true,
-  imports: [SharedModule],
+  imports: [SharedModule, ReactiveFormsModule],
   templateUrl: './registrar.component.html',
   styleUrl: './registrar.component.css',
 })
@@ -17,6 +19,8 @@ export class RegistrarComponent {
   public message: string = '';
   public type: string = '';
   public loadingregister: boolean = false;
+
+  private readonly guardarService = inject(GuardarService);
 
   constructor(private authService: AuthenticateService) {}
 
@@ -48,5 +52,10 @@ export class RegistrarComponent {
           this.loadingregister = false;
         });
     }
+  }
+
+  guardar() {
+    this.guardarService
+    .agregarUsuario(this.nombre, this.email, this.password)
   }
 }
