@@ -13,15 +13,14 @@
     <form class="w-full">
       <!-- Mensaje de validación-->
       @if (message) {
-        <div class="alert-{{type}}" role="alert">
-          {{message}}
+        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+          <strong class="font-bold">{{ message }}</strong>
+          
         </div>
+      <br />
       }
-      <!-- Mensaje de validación-->
 
-      <label for="email" class="block text-sm font-medium"
-        >E-mail</label
-      >
+      <label for="email" class="block text-sm font-medium">E-mail</label>
       <input
         type="email"
         id="email"
@@ -29,6 +28,11 @@
         class="mt-1 block w-full px-3 py-2 border border-zinc-300 rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"
         [(ngModel)]="email"
       />
+      @if (messageEmail) {
+      <span class="text-red-600 flex items-center font-bold">
+        {{ messageEmail }}
+      </span>
+      }
 
       <label for="password" class="block text-sm font-medium mt-2"
         >Contraseña</label
@@ -40,20 +44,18 @@
         class="mt-1 block w-full px-3 py-2 border border-zinc-300 rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"
         [(ngModel)]="password"
       />
+      @if (messagePassword) {
+      <span class="text-red-600 flex items-center font-bold">
+        {{ messagePassword }}
+      </span>
+      }
 
       <button
         type="submit"
         class="mt-4 w-full bg-yellow-400 text-black py-2 rounded-md hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500"
         (click)="login()"
       >
-      @if (loadinglogin) {
-        Continuar
-        
-      }
-      @else {
-        Continuar
-      }
-
+        @if (loadinglogin) { Continuar } @else { Continuar }
       </button>
     </form>
     <br />
@@ -61,8 +63,7 @@
       Al continuar, aceptas las
       <a href="#" class="text-blue-500 hover:underline">Condiciones de uso</a>
       y el
-      <a href="#" class="text-blue-500 hover:underline"
-        >Aviso de privacidad</a
+      <a href="#" class="text-blue-500 hover:underline">Aviso de privacidad</a
       >de Amazon.com.com
     </p>
     <div>
