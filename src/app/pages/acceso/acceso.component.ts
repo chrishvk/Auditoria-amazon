@@ -3,14 +3,16 @@ import { SharedModule } from '../../shared/shared.module';
 import { AuthenticateService } from '../../services/authenticate.service';
 import { Router } from '@angular/router';
 
+
 @Component({
-  selector: 'app-show-amazon',
+  selector: 'app-acceso',
   standalone: true,
   imports: [SharedModule],
-  templateUrl: './show-amazon.component.html',
-  styleUrl: './show-amazon.component.css'
+  templateUrl: './acceso.component.html',
+  styleUrl: './acceso.component.css'
 })
-export class ShowAmazonComponent {
+export class AccesoComponent {
+
   constructor(private authService: AuthenticateService, private router: Router) {}
 
   logout() {

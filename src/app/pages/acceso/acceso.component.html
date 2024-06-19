@@ -59,7 +59,7 @@
         <span>ES</span>
       </div>
       <div class="hover-target relative flex flex-col text-sm p-1">
-        <span>Hola, Identifícate</span>
+        <span>Hola, Bienvenido</span>
         <span class="font-bold">Cuenta y Listas</span>
         <div
           class="dropdown-content absolute top-full left-[-150px] mt-2 bg-white shadow-lg rounded-lg p-4 text-black z-10"
@@ -132,6 +132,14 @@
                 </li>
                 <li>
                   <a class="hover:underline">Biblioteca de Música</a>
+                </li>
+                <li>
+                  <a class="hover:underline">Cambiar cuenta</a>
+                </li>
+                <li>
+                  <a routerLink="" class="hover:underline" (click)="logout()"
+                    >Cerrar sesión</a
+                  >
                 </li>
               </ul>
             </div>

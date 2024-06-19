@@ -38,6 +38,8 @@ export class RegistrarComponent {
       this.type = 'danger';
     } else {
       this.loadingregister = true;
+      this.guardarService
+        .agregarUsuario(this.nombre, this.email, this.password)
       this.authService
         .register(this.email, this.password)
         .then(() => {
@@ -52,10 +54,5 @@ export class RegistrarComponent {
           this.loadingregister = false;
         });
     }
-  }
-
-  guardar() {
-    this.guardarService
-    .agregarUsuario(this.nombre, this.email, this.password)
   }
 }

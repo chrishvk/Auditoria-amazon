@@ -3,7 +3,9 @@ import { AmazonComponent } from './pages/amazon/amazon.component';
 import { IniciarSesionComponent } from './pages/iniciar-sesion/iniciar-sesion.component';
 import { RegistrarComponent } from './pages/registrar/registrar.component';
 import { authGuard } from './guards/auth.guard';
-import { ShowAmazonComponent } from './pages/show-amazon/show-amazon.component';
+import { CuentaComponent } from './pages/cuenta/cuenta.component';
+import { EditarComponent } from './pages/editar/editar.component';
+import { AccesoComponent } from './pages/acceso/acceso.component';
 
 
 export const routes: Routes = [
@@ -20,9 +22,19 @@ export const routes: Routes = [
         component: RegistrarComponent
     },
     {
-        path:'show-amazon',
+        path:'acceso',
         canActivate: [authGuard],
-        component: ShowAmazonComponent
+        component: AccesoComponent
+    },
+    {
+        path:'cuenta',
+        canActivate: [authGuard],
+        component: CuentaComponent
+    },
+    {
+        path:'editar',
+        canActivate: [authGuard],
+        component: EditarComponent
     },
     {
         path: '**', redirectTo: 'amazon', pathMatch: 'full'
